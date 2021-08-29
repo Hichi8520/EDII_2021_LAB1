@@ -10,7 +10,7 @@ namespace Library_LAB1
 
         List<T> ListValuesToShow = new List<T>();
 
-        int grado = 7;
+        int grado = 5;
         public void insertar(T valor)
         {
             if (raiz.valores.Count == 0) //si el arbol esta vacio
@@ -189,14 +189,24 @@ namespace Library_LAB1
             }
             else
             {
+                for(int i = 0; i < uno.valores.Count; i++)
+                {
+                    if(padre.hijos[i].valores == uno.valores) // removemos el hijo que se está modificando
+                    {
+                        padre.hijos.RemoveAt(i);
+                        break;
+                    }
+                }
                 padre.valores.Add(uno.valores[divi]);
-                padre.hijos.RemoveAt(padre.hijos.Count - 1);
+                padre.valores.Sort();
 
                 dos.padre = padre;
                 tres.padre = padre;
 
                 padre.hijos.Add(dos);
                 padre.hijos.Add(tres);
+
+                padre = ordenar_hijos(padre);
 
                 if(padre.valores.Count == grado)
                 {
@@ -207,6 +217,26 @@ namespace Library_LAB1
                     return padre;
                 }
             }
+        }
+
+        public NodoB<T> ordenar_hijos(NodoB<T> data)
+        {
+            for (int i = 0; i < data.hijos.Count - 1; i++)
+            {
+                for (int j = i + 1; j < data.hijos.Count; j++)
+                {
+                    if (!object.Equals(data.hijos[i].valores[0], default(T)) && !object.Equals(data.hijos[j].valores[0], default(T)))
+                    {
+                        if (data.hijos[i].valores[0].CompareTo(data.hijos[j].valores[0]) > 0)
+                        {
+                            var aux = data.hijos[i];
+                            data.hijos[i] = data.hijos[j];
+                            data.hijos[j] = aux;
+                        }
+                    }
+                }
+            }
+            return data;
         }
 
         NodoB<T> separacion_padre(NodoB<T> actual, NodoB<T> padre, int grado)
