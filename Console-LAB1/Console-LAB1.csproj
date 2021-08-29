@@ -6,4 +6,8 @@
     <RootNamespace>Console_LAB1</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Library-LAB1\Library-LAB1.csproj" />
+  </ItemGroup>
+
 </Project>

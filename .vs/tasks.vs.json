@@ -1,0 +1,10 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskLabel": "tarea-API-LAB1",
+      "appliesTo": "API-LAB1/",
+      "type": "launch"
+    }
+  ]
+}
