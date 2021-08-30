@@ -32,3 +32,19 @@ C:\Users\Admin\Documents\Ciclo 2021\ESTII\Lab\Practicas\EDII_2021_LAB1\Console-L
 C:\Users\Admin\Documents\Ciclo 2021\ESTII\Lab\Practicas\EDII_2021_LAB1\Console-LAB1\obj\Debug\netcoreapp3.1\Console-LAB1.dll
 C:\Users\Admin\Documents\Ciclo 2021\ESTII\Lab\Practicas\EDII_2021_LAB1\Console-LAB1\obj\Debug\netcoreapp3.1\Console-LAB1.pdb
 C:\Users\Admin\Documents\Ciclo 2021\ESTII\Lab\Practicas\EDII_2021_LAB1\Console-LAB1\obj\Debug\netcoreapp3.1\Console-LAB1.genruntimeconfig.cache
+C:\Users\hichi\Documents\GitHub\EDII_2021_LAB1\Console-LAB1\bin\Debug\netcoreapp3.1\Console-LAB1.exe
+C:\Users\hichi\Documents\GitHub\EDII_2021_LAB1\Console-LAB1\bin\Debug\netcoreapp3.1\Console-LAB1.deps.json
+C:\Users\hichi\Documents\GitHub\EDII_2021_LAB1\Console-LAB1\bin\Debug\netcoreapp3.1\Console-LAB1.runtimeconfig.json
+C:\Users\hichi\Documents\GitHub\EDII_2021_LAB1\Console-LAB1\bin\Debug\netcoreapp3.1\Console-LAB1.runtimeconfig.dev.json
+C:\Users\hichi\Documents\GitHub\EDII_2021_LAB1\Console-LAB1\bin\Debug\netcoreapp3.1\Console-LAB1.dll
+C:\Users\hichi\Documents\GitHub\EDII_2021_LAB1\Console-LAB1\bin\Debug\netcoreapp3.1\Console-LAB1.pdb
+C:\Users\hichi\Documents\GitHub\EDII_2021_LAB1\Console-LAB1\bin\Debug\netcoreapp3.1\Library-LAB1.dll
+C:\Users\hichi\Documents\GitHub\EDII_2021_LAB1\Console-LAB1\bin\Debug\netcoreapp3.1\Library-LAB1.pdb
+C:\Users\hichi\Documents\GitHub\EDII_2021_LAB1\Console-LAB1\obj\Debug\netcoreapp3.1\Console-LAB1.csprojAssemblyReference.cache
+C:\Users\hichi\Documents\GitHub\EDII_2021_LAB1\Console-LAB1\obj\Debug\netcoreapp3.1\Console-LAB1.AssemblyInfoInputs.cache
+C:\Users\hichi\Documents\GitHub\EDII_2021_LAB1\Console-LAB1\obj\Debug\netcoreapp3.1\Console-LAB1.AssemblyInfo.cs
+C:\Users\hichi\Documents\GitHub\EDII_2021_LAB1\Console-LAB1\obj\Debug\netcoreapp3.1\Console-LAB1.csproj.CoreCompileInputs.cache
+C:\Users\hichi\Documents\GitHub\EDII_2021_LAB1\Console-LAB1\obj\Debug\netcoreapp3.1\Console-LAB1.csproj.CopyComplete
+C:\Users\hichi\Documents\GitHub\EDII_2021_LAB1\Console-LAB1\obj\Debug\netcoreapp3.1\Console-LAB1.dll
+C:\Users\hichi\Documents\GitHub\EDII_2021_LAB1\Console-LAB1\obj\Debug\netcoreapp3.1\Console-LAB1.pdb
+C:\Users\hichi\Documents\GitHub\EDII_2021_LAB1\Console-LAB1\obj\Debug\netcoreapp3.1\Console-LAB1.genruntimeconfig.cache

@@ -1,4 +1,5 @@
 ﻿using System;
+using Library_LAB1;
 
 namespace Console_LAB1
 {
@@ -6,7 +7,7 @@ namespace Console_LAB1
     {
         static void Main(string[] args)
         {
-            Library_LAB1.ArbolB<int> Pruebas = new Library_LAB1.ArbolB<int>();
+            ArbolB<int> Pruebas = new ArbolB<int>();
             int valor = 1;
             while (valor != 0)
             {

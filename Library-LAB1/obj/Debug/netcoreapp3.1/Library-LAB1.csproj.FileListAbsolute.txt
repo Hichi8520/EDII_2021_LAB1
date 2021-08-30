@@ -18,3 +18,12 @@ C:\Users\Admin\Documents\Ciclo 2021\ESTII\Lab\Practicas\EDII_2021_LAB1\Library-L
 C:\Users\Admin\Documents\Ciclo 2021\ESTII\Lab\Practicas\EDII_2021_LAB1\Library-LAB1\obj\Debug\netcoreapp3.1\Library-LAB1.csproj.CoreCompileInputs.cache
 C:\Users\Admin\Documents\Ciclo 2021\ESTII\Lab\Practicas\EDII_2021_LAB1\Library-LAB1\obj\Debug\netcoreapp3.1\Library-LAB1.dll
 C:\Users\Admin\Documents\Ciclo 2021\ESTII\Lab\Practicas\EDII_2021_LAB1\Library-LAB1\obj\Debug\netcoreapp3.1\Library-LAB1.pdb
+C:\Users\hichi\Documents\GitHub\EDII_2021_LAB1\Library-LAB1\bin\Debug\netcoreapp3.1\Library-LAB1.deps.json
+C:\Users\hichi\Documents\GitHub\EDII_2021_LAB1\Library-LAB1\bin\Debug\netcoreapp3.1\Library-LAB1.dll
+C:\Users\hichi\Documents\GitHub\EDII_2021_LAB1\Library-LAB1\bin\Debug\netcoreapp3.1\Library-LAB1.pdb
+C:\Users\hichi\Documents\GitHub\EDII_2021_LAB1\Library-LAB1\obj\Debug\netcoreapp3.1\Library-LAB1.csprojAssemblyReference.cache
+C:\Users\hichi\Documents\GitHub\EDII_2021_LAB1\Library-LAB1\obj\Debug\netcoreapp3.1\Library-LAB1.AssemblyInfoInputs.cache
+C:\Users\hichi\Documents\GitHub\EDII_2021_LAB1\Library-LAB1\obj\Debug\netcoreapp3.1\Library-LAB1.AssemblyInfo.cs
+C:\Users\hichi\Documents\GitHub\EDII_2021_LAB1\Library-LAB1\obj\Debug\netcoreapp3.1\Library-LAB1.csproj.CoreCompileInputs.cache
+C:\Users\hichi\Documents\GitHub\EDII_2021_LAB1\Library-LAB1\obj\Debug\netcoreapp3.1\Library-LAB1.dll
+C:\Users\hichi\Documents\GitHub\EDII_2021_LAB1\Library-LAB1\obj\Debug\netcoreapp3.1\Library-LAB1.pdb

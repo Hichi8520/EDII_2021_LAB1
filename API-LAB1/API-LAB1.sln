@@ -3,11 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30611.23
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API-LAB1", "API-LAB1.csproj", "{670AA9F6-E359-4D57-90CB-E9A0771B88AE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API-LAB1", "API-LAB1.csproj", "{670AA9F6-E359-4D57-90CB-E9A0771B88AE}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C4FFBA62-0F1A-4A01-837F-9A19367FAAB6} = {C4FFBA62-0F1A-4A01-837F-9A19367FAAB6}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library-LAB1", "..\Library-LAB1\Library-LAB1.csproj", "{C4FFBA62-0F1A-4A01-837F-9A19367FAAB6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library-LAB1", "..\Library-LAB1\Library-LAB1.csproj", "{C4FFBA62-0F1A-4A01-837F-9A19367FAAB6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console-LAB1", "..\Console-LAB1\Console-LAB1.csproj", "{44EA9BF1-128B-4100-8F28-F7DA21CF3432}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Console-LAB1", "..\Console-LAB1\Console-LAB1.csproj", "{44EA9BF1-128B-4100-8F28-F7DA21CF3432}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
