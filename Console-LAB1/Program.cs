@@ -7,7 +7,7 @@ namespace Console_LAB1
     {
         static void Main(string[] args)
         {
-            ArbolB<int> Pruebas = new ArbolB<int>();
+            ArbolB<int> Pruebas = new ArbolB<int>(5);
             int valor = 1;
             while (valor != 0)
             {

@@ -34,8 +34,7 @@ namespace API_LAB1.Controllers
         public ActionResult Grado([FromBody] int value)
         {
             Data<Pelicula>.Instance.grado = value;
-            //Data<Pelicula>.Instance.temp = new ArbolB<Pelicula>(value);
-            Data<Pelicula>.Instance.temp = new ArbolB<Pelicula>();
+            Data<Pelicula>.Instance.temp = new ArbolB<Pelicula>(value);
             return Created("", "Árbol creado de grado " + value.ToString());
         }
 
@@ -55,16 +54,16 @@ namespace API_LAB1.Controllers
         // Insert values from json to the tree
         [HttpPost]
         [Route("populate")]
-        public ActionResult Add([FromForm] IFormFile value)
+        public IActionResult Add([FromBody] List<Pelicula> peliculas)
         {
             try
             {
                 if (Data<Pelicula>.Instance.grado != 0)
                 {
-                    //for (int i = 0; i < value.Count; i++)
-                    //{
-                    //    Data<Pelicula>.Instance.temp.insertar(value[i]);
-                    //}
+                    for (int i = 0; i < peliculas.Count; i++)
+                    {                            
+                        Data<Pelicula>.Instance.temp.insertar(peliculas[i]);
+                    }
                     return Ok();
                 }
                 else
@@ -74,10 +73,34 @@ namespace API_LAB1.Controllers
             }
             catch (InvalidCastException e)
             {
-                return BadRequest("InternalServerError");
+                return StatusCode(StatusCodes.Status500InternalServerError);
             }
             return Ok();
         }
+
+        //public ActionResult Add([FromForm] IFormFile value)
+        //{
+        //    try
+        //    {
+        //        if (Data<Pelicula>.Instance.grado != 0)
+        //        {
+        //            //for (int i = 0; i < value.Count; i++)
+        //            //{
+        //            //    Data<Pelicula>.Instance.temp.insertar(value[i]);
+        //            //}
+        //            return Ok();
+        //        }
+        //        else
+        //        {
+        //            return BadRequest("Debe de crear su arbol primero");
+        //        }
+        //    }
+        //    catch (InvalidCastException e)
+        //    {
+        //        return BadRequest("InternalServerError");
+        //    }
+        //    return Ok();
+        //}
 
         [HttpGet]
         [Route("InOrder")]
@@ -87,7 +110,7 @@ namespace API_LAB1.Controllers
 
             if (Data<Pelicula>.Instance.grado != 0)
             {
-                //InOrden = Data<Pelicula>.Instance.temp.InOrder();
+                InOrden = Data<Pelicula>.Instance.temp.InOrder(Data<Pelicula>.Instance.grado);
                 return InOrden;
             }
             else
@@ -103,7 +126,7 @@ namespace API_LAB1.Controllers
 
             if (Data<Pelicula>.Instance.grado != 0)
             {
-                //PostOrden = Data<Pelicula>.Instance.temp.PostOrder();
+                PostOrden = Data<Pelicula>.Instance.temp.PostOrder(Data<Pelicula>.Instance.grado);
                 return PostOrden;
             }
             else
@@ -119,7 +142,7 @@ namespace API_LAB1.Controllers
 
             if (Data<Pelicula>.Instance.grado != 0)
             {
-                //PreOrder = Data<Pelicula>.Instance.temp.PreOrder();
+                PreOrder = Data<Pelicula>.Instance.temp.PreOrder(Data<Pelicula>.Instance.grado);
                 return PreOrder;
             }
             else

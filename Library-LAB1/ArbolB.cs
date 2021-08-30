@@ -10,7 +10,13 @@ namespace Library_LAB1
 
         List<T> ListValuesToShow = new List<T>();
 
-        int grado = 5;
+        int grado = 0;
+
+        public ArbolB(int grado)
+        {
+            this.grado = grado;
+        }
+
         public void insertar(T valor)
         {
             if (raiz.valores.Count == 0) //si el arbol esta vacio
@@ -314,6 +320,89 @@ namespace Library_LAB1
                 regresar_inicio(value.padre);
             }
             return value;
+        }
+
+        //************* RECORRIDOS *************
+
+        private void InOrder(NodoB<T> nodo_actual, int g)
+        {
+            for (int i = 0; i <= g; i++)
+            {
+                if (nodo_actual.hijos.Count > 0 && !object.Equals(nodo_actual.hijos[i], default))
+                {
+                    InOrder(nodo_actual.hijos[i], nodo_actual.hijos[i].valores.Count);
+                }
+                if (i < g)
+                {
+                    if (!object.Equals(nodo_actual.valores[i], default(T)))
+                    {
+                        ListValuesToShow.Add(nodo_actual.valores[i]);
+
+                    }
+                }
+            }
+        }
+        public List<T> InOrder(int g)
+        {
+            ListValuesToShow.Clear();
+            InOrder(raiz, raiz.valores.Count);
+            return ListValuesToShow;
+        }
+
+        private void PreOrder(NodoB<T> nodo_actual, int g)
+        {
+            for (int i = 0; i <= g; i++)
+            {
+                if (i < g)
+                {
+                    if (!object.Equals(nodo_actual.valores[i], default(T)))
+                    {
+                        ListValuesToShow.Add(nodo_actual.valores[i]);
+                    }
+                }
+            }
+
+            for (int i = 0; i <= g; i++)
+            {
+                if (nodo_actual.hijos.Count > 0 && !object.Equals(nodo_actual.hijos[i], default))
+                {
+                    PreOrder(nodo_actual.hijos[i], nodo_actual.hijos[i].valores.Count);
+                }
+            }
+        }
+        public List<T> PreOrder(int g)
+        {
+            ListValuesToShow.Clear();
+            PreOrder(raiz, raiz.valores.Count);
+            return ListValuesToShow;
+        }
+
+        private void PostOrder(NodoB<T> nodo_actual, int g)
+        {
+            for (int i = 0; i <= g; i++)
+            {
+                if (nodo_actual.hijos.Count > 0 && !object.Equals(nodo_actual.hijos[i], default))
+                {
+                    PostOrder(nodo_actual.hijos[i], nodo_actual.hijos[i].valores.Count);
+                }
+            }
+
+            for (int i = 0; i <= g; i++)
+            {
+                if (i < g)
+                {
+                    if (!object.Equals(nodo_actual.valores[i], default(T)))
+                    {
+                        ListValuesToShow.Add(nodo_actual.valores[i]);
+                    }
+                }
+            }
+        }
+        public List<T> PostOrder(int g)
+        {
+            ListValuesToShow.Clear();
+            PostOrder(raiz, raiz.valores.Count);
+            return ListValuesToShow;
         }
     }
 }
