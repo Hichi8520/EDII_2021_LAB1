@@ -33,8 +33,6 @@ C:\Users\hichi\Documents\GitHub\EDII_2021_LAB1\API-LAB1\bin\Debug\netcoreapp3.1\
 C:\Users\hichi\Documents\GitHub\EDII_2021_LAB1\API-LAB1\obj\Debug\netcoreapp3.1\API-LAB1.csprojAssemblyReference.cache
 C:\Users\hichi\Documents\GitHub\EDII_2021_LAB1\API-LAB1\obj\Debug\netcoreapp3.1\API-LAB1.AssemblyInfoInputs.cache
 C:\Users\hichi\Documents\GitHub\EDII_2021_LAB1\API-LAB1\obj\Debug\netcoreapp3.1\API-LAB1.AssemblyInfo.cs
-C:\Users\hichi\Documents\GitHub\EDII_2021_LAB1\API-LAB1\obj\Debug\netcoreapp3.1\API-LAB1.csproj.CoreCompileInputs.cache
-C:\Users\hichi\Documents\GitHub\EDII_2021_LAB1\API-LAB1\obj\Debug\netcoreapp3.1\API-LAB1.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\hichi\Documents\GitHub\EDII_2021_LAB1\API-LAB1\obj\Debug\netcoreapp3.1\API-LAB1.RazorTargetAssemblyInfo.cache
 C:\Users\hichi\Documents\GitHub\EDII_2021_LAB1\API-LAB1\obj\Debug\netcoreapp3.1\API-LAB1.csproj.CopyComplete
 C:\Users\hichi\Documents\GitHub\EDII_2021_LAB1\API-LAB1\obj\Debug\netcoreapp3.1\staticwebassets\API-LAB1.StaticWebAssets.Manifest.cache
@@ -42,3 +40,6 @@ C:\Users\hichi\Documents\GitHub\EDII_2021_LAB1\API-LAB1\obj\Debug\netcoreapp3.1\
 C:\Users\hichi\Documents\GitHub\EDII_2021_LAB1\API-LAB1\obj\Debug\netcoreapp3.1\API-LAB1.dll
 C:\Users\hichi\Documents\GitHub\EDII_2021_LAB1\API-LAB1\obj\Debug\netcoreapp3.1\API-LAB1.pdb
 C:\Users\hichi\Documents\GitHub\EDII_2021_LAB1\API-LAB1\obj\Debug\netcoreapp3.1\API-LAB1.genruntimeconfig.cache
+C:\Users\hichi\Documents\GitHub\EDII_2021_LAB1\API-LAB1\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\hichi\Documents\GitHub\EDII_2021_LAB1\API-LAB1\obj\Debug\netcoreapp3.1\API-LAB1.csproj.CoreCompileInputs.cache
+C:\Users\hichi\Documents\GitHub\EDII_2021_LAB1\API-LAB1\obj\Debug\netcoreapp3.1\API-LAB1.MvcApplicationPartsAssemblyInfo.cache

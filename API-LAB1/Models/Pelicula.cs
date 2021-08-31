@@ -23,16 +23,29 @@ namespace API_LAB1.Models
 
                 if (title.CompareTo(pelicula2.title) == 0) // los títulos son iguales
                 {
-                    if (director.CompareTo(pelicula2.director) == 0) // los directores son iguales
+                    if ((director != null && pelicula2.director != null && director.CompareTo(pelicula2.director) == 0)
+                        || (director == null && pelicula2.director == null)) // los directores son iguales
                     {
-                        if (genre.CompareTo(pelicula2.genre) == 0) // los géneros son iguales
+                        if ((genre != null && pelicula2.genre != null && genre.CompareTo(pelicula2.genre) == 0)
+                            || (genre == null && pelicula2.genre == null)) // los géneros son iguales
                         {
-                            if (releaseDate.CompareTo(pelicula2.releaseDate) < 0) return -1;
+                            if ((releaseDate != null && pelicula2.releaseDate != null && releaseDate.CompareTo(pelicula2.releaseDate) == 0)
+                                || (releaseDate == null && pelicula2.releaseDate == null)) // las fechas de estreno son iguales
+                            {
+                                return 0; // ambas son la misma película
+                            }
+                            else if (releaseDate == null && pelicula2.releaseDate != null) return -1;
+                            else if (releaseDate != null && pelicula2.releaseDate == null) return 1;
+                            else if (releaseDate.CompareTo(pelicula2.genre) < 0) return -1;
                             else return 1;
                         }
+                        else if (genre == null && pelicula2.genre != null) return -1;
+                        else if (genre != null && pelicula2.genre == null) return 1;
                         else if (genre.CompareTo(pelicula2.genre) < 0) return -1;
                         else return 1;
                     }
+                    else if (director == null && pelicula2.director != null) return -1;
+                    else if (director != null && pelicula2.director == null) return 1;
                     else if (director.CompareTo(pelicula2.director) < 0) return -1;
                     else return 1;
                 }

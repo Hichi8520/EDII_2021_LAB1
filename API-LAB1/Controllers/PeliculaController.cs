@@ -8,6 +8,7 @@ using API_LAB1.Helpers;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace API_LAB1.Controllers
 {
@@ -78,29 +79,49 @@ namespace API_LAB1.Controllers
             return Ok();
         }
 
-        //public ActionResult Add([FromForm] IFormFile value)
-        //{
-        //    try
-        //    {
-        //        if (Data<Pelicula>.Instance.grado != 0)
-        //        {
-        //            //for (int i = 0; i < value.Count; i++)
-        //            //{
-        //            //    Data<Pelicula>.Instance.temp.insertar(value[i]);
-        //            //}
-        //            return Ok();
-        //        }
-        //        else
-        //        {
-        //            return BadRequest("Debe de crear su arbol primero");
-        //        }
-        //    }
-        //    catch (InvalidCastException e)
-        //    {
-        //        return BadRequest("InternalServerError");
-        //    }
-        //    return Ok();
-        //}
+        public class FileUploadAPI
+        {
+            public IFormFile file { get; set; }
+        }
+
+        [HttpPost]
+        [Route("populatefile")]
+        public async Task<IActionResult> Add(FileUploadAPI objFile)
+        {
+            try
+            {
+                if (objFile.file.Length > 0)
+                {
+                    using (StreamReader r = new StreamReader("file.json"))
+                    {
+                        string json = r.ReadToEnd();
+                        List<Pelicula> peliculas = JsonConvert.DeserializeObject<List<Pelicula>>(json);
+
+
+                        if (Data<Pelicula>.Instance.grado != 0)
+                        {
+                            for (int i = 0; i < peliculas.Count; i++)
+                            {
+                                Data<Pelicula>.Instance.temp.insertar(peliculas[i]);
+                            }
+                            return Ok();
+                        }
+                        else
+                        {
+                            return BadRequest("Debe de crear su arbol primero");
+                        }
+                    }
+                }
+                else
+                {
+                    return BadRequest("Archivo vacío");
+                }
+            }
+            catch (Exception e)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
+        }
 
         [HttpGet]
         [Route("InOrder")]

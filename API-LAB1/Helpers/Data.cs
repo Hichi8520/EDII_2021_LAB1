@@ -14,14 +14,6 @@ namespace API_LAB1.Helpers
         public Type type;
         public ArbolB<T> temp;
 
-        // Variables de apoyo para la separación de nodos
-        //public T[] valoresMayores;
-        //public T valorMedio;
-        //public int idPadre;
-        //public int idNodoActual;
-        //public int idNodoNuevo;
-        //public int[] hijosMayores;
-
         // Lista para los recorridos del árbol
         public List<T> ListValuesToShow = new List<T>();
 
