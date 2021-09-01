@@ -12,11 +12,12 @@ namespace Library_LAB1
 
         int grado = 0;
 
+        /*******************Creación del Árbol B ***************************/
         public ArbolB(int grado)
         {
             this.grado = grado;
         }
-
+        /**************Inserción de valores en el Árbol B*******************/
         public void insertar(T valor)
         {
             if (raiz.valores.Count == 0) //si el arbol esta vacio
@@ -44,7 +45,7 @@ namespace Library_LAB1
                 else if (actual.valores[i].CompareTo(valor) < 0)
                 {
                     // valor mayor
-                    if(i < actual.valores.Count - 1)
+                    if (i < actual.valores.Count - 1)
                     {
                         if (actual.valores[i + 1].CompareTo(valor) > 0)
                         {
@@ -154,7 +155,7 @@ namespace Library_LAB1
             }
         }
 
-         NodoB<T> separacion(NodoB<T> actual, NodoB<T> padre, int grado)
+        NodoB<T> separacion(NodoB<T> actual, NodoB<T> padre, int grado)
         {
             NodoB<T> uno = new NodoB<T>();
             NodoB<T> dos = new NodoB<T>();
@@ -165,14 +166,14 @@ namespace Library_LAB1
             double posicion_intermedio = grado / 2;
             int divi = (int)Math.Round(posicion_intermedio);
 
-            for(int i = 0; i < grado; i++)
+            for (int i = 0; i < grado; i++)
             {
-                if(i < divi)
+                if (i < divi)
                 {
                     dos.valores.Add(uno.valores[i]);
                 }
 
-                if(i > divi)
+                if (i > divi)
                 {
                     tres.valores.Add(uno.valores[i]);
                 }
@@ -195,9 +196,9 @@ namespace Library_LAB1
             }
             else
             {
-                for(int i = 0; i < uno.valores.Count; i++)
+                for (int i = 0; i < uno.valores.Count; i++)
                 {
-                    if(padre.hijos[i].valores == uno.valores) // removemos el hijo que se está modificando
+                    if (padre.hijos[i].valores == uno.valores) // removemos el hijo que se está modificando
                     {
                         padre.hijos.RemoveAt(i);
                         break;
@@ -214,7 +215,7 @@ namespace Library_LAB1
 
                 padre = ordenar_hijos(padre);
 
-                if(padre.valores.Count == grado)
+                if (padre.valores.Count == grado)
                 {
                     return separacion_padre(padre, padre.padre, grado);
                 }
@@ -315,11 +316,79 @@ namespace Library_LAB1
 
         NodoB<T> regresar_inicio(NodoB<T> value)
         {
-            if(value.padre != default)
+            if (value.padre != default)
             {
                 regresar_inicio(value.padre);
             }
             return value;
+        }
+
+        /**************Eliminación de valores en el Árbol B*******************/
+        public void eliminar(T valor)
+        {
+            eliminar(valor, raiz, raiz.padre, raiz.valores, grado, 0);
+        }
+        void eliminar(T valor, NodoB<T> actual, NodoB<T> padre, List<T> valores, int grado, int posicion_anterior)
+        {
+            for (int i = 0; i < actual.valores.Count; i++)
+            {
+                if (actual.valores[i].CompareTo(valor) == 0)
+                {
+                    // valor igual
+                    int valores_min = grado / 2;
+
+                    if (actual.valores.Count > valores_min)
+                    {
+                        actual.valores.RemoveAt(i);
+                    }
+                    else
+                    {
+                        if ((posicion_anterior + 1) == padre.valores.Count) // Esto indica que el valor esta en el ultimo hijo
+                        {
+
+                        }
+                        else if (posicion_anterior > 0 && posicion_anterior < padre.valores.Count) // Esto indica que el valor tiene hermano izquierdo y derecho
+                        {
+
+                        }
+                    }
+                }
+                else if (actual.valores[i].CompareTo(valor) < 0)
+                {
+                    // valor mayor
+                    if (i < actual.valores.Count - 1)
+                    {
+                        if (actual.valores[i + 1].CompareTo(valor) > 0)
+                        {
+                            if (actual.hijos.Count == 0) // sin hijos
+                            {
+
+                            }
+                            else
+                            {
+                                eliminar(valor, actual.hijos[i + 1], actual, actual.hijos[i + 1].valores, grado, i);
+                                break;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if (actual.hijos.Count == 0) // sin hijos
+                        {
+
+                        }
+                        else
+                        {
+                            eliminar(valor, actual.hijos[i + 1], actual, actual.hijos[i + 1].valores, grado, i);
+                            break;
+                        }
+                    }
+                }
+                else if (actual.valores[i].CompareTo(valor) > 0)
+                {
+                    // valor menor
+                }
+            }
         }
 
         //************* RECORRIDOS *************
