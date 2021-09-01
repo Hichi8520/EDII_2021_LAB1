@@ -6,7 +6,6 @@ namespace API_LAB1.Models
 {
     public class Pelicula : IComparable
     {
-        //public string id { get; set; }
         public string director { get; set; }
         public double imdbRating { get; set; }
         public string genre { get; set; }

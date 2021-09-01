@@ -52,17 +52,25 @@ namespace API_LAB1.Controllers
             else return BadRequest("No existe el árbol a eliminar");
         }
 
+        // Delete a movie from the tree
         [HttpDelete]
         [Route("populate/{*id}")]
         public IActionResult DeleteMovie(string id)
         {
-            string titulo = id.Replace("_", " ");
+            try
+            {
+                string titulo = id.Replace("_", " ");
 
-            // Delete movie from tree
-            return Ok(titulo);
+                return Ok(titulo);
+            }
+            catch (Exception e)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
+            
         }
 
-        // Insert values from json to the tree
+        // Insert values from json body to the tree
         [HttpPost]
         [Route("populate")]
         public IActionResult Add([FromBody] List<Pelicula> peliculas)
@@ -89,6 +97,7 @@ namespace API_LAB1.Controllers
             return Ok();
         }
 
+        // Insert values from json file to the tree
         [HttpPost]
         [Route("populatefile")]
         public async Task<IActionResult> Add([FromForm] IFormFile file)
