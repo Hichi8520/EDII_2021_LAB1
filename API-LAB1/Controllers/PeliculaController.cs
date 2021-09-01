@@ -19,7 +19,7 @@ namespace API_LAB1.Controllers
         [HttpGet]
         public string Get()
         {
-            string mensaje = "Laboratorio 1 - Inicio Exitoso...\n * Cree su arbol - Mande un numero para crear el grado del arbol \n * Mande sus inserciones desde postman por medio de una lista de peliculas agregando a la url '/populate'\n * Verifique la información por medio de modificar la url con los recorridos /InOrder  /PostOrder /PreOrder \n";
+            string mensaje = "Laboratorio 1 - Inicio Exitoso...\n * Cree su arbol - Mande un numero para crear el grado del arbol \n * Elimine el árbol existente \n * Mande sus inserciones desde postman por medio de una lista de peliculas agregando a la ruta '/populate' o enviando un archivo .json a la ruta '/populatefile' \n * Verifique la información por medio de modificar la url con los recorridos /InOrder  /PostOrder /PreOrder \n * Elimine un valor del árbol enviando el título de la película en la ruta (usar guión bajo en caso el título tenga espacios)";
             return mensaje;
         }
 
@@ -41,7 +41,7 @@ namespace API_LAB1.Controllers
 
         // Delete the tree
         [HttpDelete]
-        public ActionResult Delete()
+        public ActionResult DeleteTree()
         {
             if (Data<Pelicula>.Instance.grado != 0)
             {
@@ -50,6 +50,16 @@ namespace API_LAB1.Controllers
                 return Ok("Árbol eliminado exitosamente");
             }
             else return BadRequest("No existe el árbol a eliminar");
+        }
+
+        [HttpDelete]
+        [Route("populate/{*id}")]
+        public IActionResult DeleteMovie(string id)
+        {
+            string titulo = id.Replace("_", " ");
+
+            // Delete movie from tree
+            return Ok(titulo);
         }
 
         // Insert values from json to the tree
@@ -79,38 +89,27 @@ namespace API_LAB1.Controllers
             return Ok();
         }
 
-        public class FileUploadAPI
-        {
-            public IFormFile file { get; set; }
-        }
-
         [HttpPost]
         [Route("populatefile")]
-        public async Task<IActionResult> Add(FileUploadAPI objFile)
+        public async Task<IActionResult> Add([FromForm] IFormFile file)
         {
             try
             {
-                if (objFile.file.Length > 0)
+                if (file.Length > 0)
                 {
-                    using (StreamReader r = new StreamReader("file.json"))
+                    if (!Directory.Exists(_env.WebRootPath + "\\PeliculasArbol\\"))
                     {
-                        string json = r.ReadToEnd();
-                        List<Pelicula> peliculas = JsonConvert.DeserializeObject<List<Pelicula>>(json);
-
-
-                        if (Data<Pelicula>.Instance.grado != 0)
-                        {
-                            for (int i = 0; i < peliculas.Count; i++)
-                            {
-                                Data<Pelicula>.Instance.temp.insertar(peliculas[i]);
-                            }
-                            return Ok();
-                        }
-                        else
-                        {
-                            return BadRequest("Debe de crear su arbol primero");
-                        }
+                        Directory.CreateDirectory(_env.WebRootPath + "\\PeliculasArbol\\");
                     }
+                    using (FileStream fileStream = System.IO.File.Create(_env.WebRootPath + "\\PeliculasArbol\\" + file.FileName))
+                    {
+                        
+                        file.CopyTo(fileStream);
+                        fileStream.Flush();
+                    }
+
+                    if (insertFile(file)) return Ok();
+                    else return BadRequest("Debe de crear su arbol primero");
                 }
                 else
                 {
@@ -120,6 +119,29 @@ namespace API_LAB1.Controllers
             catch (Exception e)
             {
                 return StatusCode(StatusCodes.Status500InternalServerError);
+            }
+        }
+
+        private bool insertFile(IFormFile file)
+        {
+            using (StreamReader r = new StreamReader(_env.WebRootPath + "\\PeliculasArbol\\" + file.FileName))
+            {
+                string json = r.ReadToEnd();
+                List<Pelicula> peliculas = JsonConvert.DeserializeObject<List<Pelicula>>(json);
+
+
+                if (Data<Pelicula>.Instance.grado != 0)
+                {
+                    for (int i = 0; i < peliculas.Count; i++)
+                    {
+                        Data<Pelicula>.Instance.temp.insertar(peliculas[i]);
+                    }
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
         }
 
