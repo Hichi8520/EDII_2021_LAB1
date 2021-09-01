@@ -100,24 +100,24 @@ namespace API_LAB1.Controllers
         // Insert values from json file to the tree
         [HttpPost]
         [Route("populatefile")]
-        public async Task<IActionResult> Add([FromForm] IFormFile file)
+        public async Task<IActionResult> Add([FromForm] IFormFile File)
         {
             try
             {
-                if (file.Length > 0)
+                if (File.Length > 0)
                 {
                     if (!Directory.Exists(_env.WebRootPath + "\\PeliculasArbol\\"))
                     {
                         Directory.CreateDirectory(_env.WebRootPath + "\\PeliculasArbol\\");
                     }
-                    using (FileStream fileStream = System.IO.File.Create(_env.WebRootPath + "\\PeliculasArbol\\" + file.FileName))
+                    using (FileStream fileStream = System.IO.File.Create(_env.WebRootPath + "\\PeliculasArbol\\" + File.FileName))
                     {
                         
-                        file.CopyTo(fileStream);
+                        File.CopyTo(fileStream);
                         fileStream.Flush();
                     }
 
-                    if (insertFile(file)) return Ok();
+                    if (insertFile(File)) return Ok();
                     else return BadRequest("Debe de crear su arbol primero");
                 }
                 else
