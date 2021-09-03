@@ -326,28 +326,92 @@ namespace Library_LAB1
         /**************Eliminación de valores en el Árbol B*******************/
         public void eliminar(T valor)
         {
-            eliminar(valor, raiz, raiz.padre, raiz.valores, grado, 0);
+            if(raiz.valores.Count > 0)
+            {
+                eliminar(valor, raiz, raiz.padre, raiz.valores, grado, 0);
+            }
+            else
+            {
+
+            }
         }
         void eliminar(T valor, NodoB<T> actual, NodoB<T> padre, List<T> valores, int grado, int posicion_anterior)
         {
+            int valores_min = grado / 2;
             for (int i = 0; i < actual.valores.Count; i++)
             {
                 if (actual.valores[i].CompareTo(valor) == 0)
                 {
                     // valor igual
-                    int valores_min = grado / 2;
-
-                    if (actual.valores.Count > valores_min)
+                    if(actual.valores.Count > valores_min)
                     {
                         actual.valores.RemoveAt(i);
+                        actual.valores.Sort();
                     }
-                    else
+                    else if(actual.padre.hijos[posicion_anterior].valores.Count > valores_min) // Verificamos si hay valores para prestar en el hermano anterior
                     {
-                        if ((posicion_anterior + 1) == padre.valores.Count) // Esto indica que el valor esta en el ultimo hijo
+
+                    }
+                    else if(posicion_anterior + 2 > actual.padre.hijos.Count) // Verificamos si es el ultimo hijo
+                    {
+                        if(actual.padre.hijos[posicion_anterior].valores.Count > valores_min) // Verificamos si hay valores para prestar en el hermano siguiente
                         {
 
                         }
-                        else if (posicion_anterior > 0 && posicion_anterior < padre.valores.Count) // Esto indica que el valor tiene hermano izquierdo y derecho
+                    }
+                    else // Realizar la unión
+                    {
+                        actual.valores.RemoveAt(i);
+                        NodoB<T> temp_an = new NodoB<T>();
+                        NodoB<T> temp_sig = new NodoB<T>();
+                        NodoB<T> union = new NodoB<T>();
+
+                        if (posicion_anterior + 2 == actual.padre.hijos.Count) // Si es el ultimo
+                        {
+                            
+                            for (int j = 0; j < actual.padre.hijos[i - 1].valores.Count; j++)
+                            {
+                                union.valores.Add(actual.padre.hijos[i - 1].valores[j]);
+                            }
+                            if(actual.padre.hijos[i-1].hijos.Count > 0)
+                            {
+                                for (int j = 0; j < actual.padre.hijos[i - 1].hijos.Count; j++)
+                                {
+                                    union.hijos.Add(actual.padre.hijos[i - 1].hijos[j]);
+                                }
+                            }
+                            union.valores.Add(actual.padre.valores[i - 1]);
+                            actual.padre.valores.RemoveAt(i - 1);
+                            for (int j = 0; j < actual.padre.hijos[i].valores.Count; j++)
+                            {
+                                union.valores.Add(actual.padre.hijos[i].valores[j]);
+                            }
+                            if (actual.padre.hijos[i].hijos.Count > 0)
+                            {
+                                for (int j = 0; j < actual.padre.hijos[i].hijos.Count; j++)
+                                {
+                                    union.hijos.Add(actual.padre.hijos[i].hijos[j]);
+                                }
+                            }
+
+                            if(padre.padre == default)
+                            {
+                                padre = union;
+                                break;
+                            }
+                            else
+                            {
+                                padre.hijos.RemoveAt(i);
+                                padre.hijos.RemoveAt(i - 1);
+                                padre.hijos.Add(ordenar_hijos(union));
+                            }
+
+                        }
+                        else if(posicion_anterior == 0) // verificamos si es el primero
+                        {
+
+                        }
+                        else // Es nodo intermedio
                         {
 
                         }
@@ -358,35 +422,42 @@ namespace Library_LAB1
                     // valor mayor
                     if (i < actual.valores.Count - 1)
                     {
-                        if (actual.valores[i + 1].CompareTo(valor) > 0)
+                        if(actual.valores[i + 1].CompareTo(valor) > 0)
                         {
-                            if (actual.hijos.Count == 0) // sin hijos
+                            if (actual.hijos.Count > 0) // si tiene hijos va al siguiente nivel inferior
                             {
-
-                            }
-                            else
-                            {
-                                eliminar(valor, actual.hijos[i + 1], actual, actual.hijos[i + 1].valores, grado, i);
-                                break;
+                                eliminar(valor, actual.hijos[i], actual, actual.hijos[i].valores, grado, i);
                             }
                         }
                     }
                     else
                     {
-                        if (actual.hijos.Count == 0) // sin hijos
-                        {
-
-                        }
-                        else
+                        if (actual.hijos.Count > 0) // Buscar en la ultima posición
                         {
                             eliminar(valor, actual.hijos[i + 1], actual, actual.hijos[i + 1].valores, grado, i);
-                            break;
                         }
                     }
                 }
                 else if (actual.valores[i].CompareTo(valor) > 0)
                 {
                     // valor menor
+                    if (i < actual.valores.Count - 1)
+                    {
+                        if (actual.valores[i + 1].CompareTo(valor) > 0)
+                        {
+                            if (actual.hijos.Count > 0) // si tiene hijos va al siguiente nivel inferior
+                            {
+                                eliminar(valor, actual.hijos[i], actual, actual.hijos[i].valores, grado, i + 1);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if (actual.hijos.Count > 0) // Buscar en la ultima posición
+                        {
+                            eliminar(valor, actual.hijos[i + 1], actual, actual.hijos[i + 1].valores, grado, i + 1);
+                        }
+                    }
                 }
             }
         }

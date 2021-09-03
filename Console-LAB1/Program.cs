@@ -27,7 +27,7 @@ namespace Console_LAB1
                             while (valor != 0)
                             {
                                 Console.Clear();
-                                Console.WriteLine("Ingrese un valor para agregarlo al Árbol B");
+                                Console.WriteLine("Ingrese un valor para agregarlo al Árbol B -- Para salir presione 0");
                                 valor = Convert.ToInt32(Console.ReadLine());
                                 if (valor != 0)
                                     Pruebas.insertar(valor);
@@ -37,7 +37,7 @@ namespace Console_LAB1
                             while (valor != 0)
                             {
                                 Console.Clear();
-                                Console.WriteLine("Ingrese un valor para eliminarlo del Árbol B");
+                                Console.WriteLine("Ingrese un valor para eliminarlo del Árbol B -- Para salir presione 0");
                                 valor = Convert.ToInt32(Console.ReadLine());
                                 Pruebas.eliminar(valor);
                             }

@@ -48,3 +48,20 @@ C:\Users\hichi\Documents\GitHub\EDII_2021_LAB1\Console-LAB1\obj\Debug\netcoreapp
 C:\Users\hichi\Documents\GitHub\EDII_2021_LAB1\Console-LAB1\obj\Debug\netcoreapp3.1\Console-LAB1.dll
 C:\Users\hichi\Documents\GitHub\EDII_2021_LAB1\Console-LAB1\obj\Debug\netcoreapp3.1\Console-LAB1.pdb
 C:\Users\hichi\Documents\GitHub\EDII_2021_LAB1\Console-LAB1\obj\Debug\netcoreapp3.1\Console-LAB1.genruntimeconfig.cache
+E:\Mis Documentos\URL\Ciclo 2021\2do\ESTII\Lab\Practicas\EDII_2021_LAB1\Console-LAB1\bin\Debug\netcoreapp3.1\Console-LAB1.exe
+E:\Mis Documentos\URL\Ciclo 2021\2do\ESTII\Lab\Practicas\EDII_2021_LAB1\Console-LAB1\bin\Debug\netcoreapp3.1\Console-LAB1.deps.json
+E:\Mis Documentos\URL\Ciclo 2021\2do\ESTII\Lab\Practicas\EDII_2021_LAB1\Console-LAB1\bin\Debug\netcoreapp3.1\Console-LAB1.runtimeconfig.json
+E:\Mis Documentos\URL\Ciclo 2021\2do\ESTII\Lab\Practicas\EDII_2021_LAB1\Console-LAB1\bin\Debug\netcoreapp3.1\Console-LAB1.runtimeconfig.dev.json
+E:\Mis Documentos\URL\Ciclo 2021\2do\ESTII\Lab\Practicas\EDII_2021_LAB1\Console-LAB1\bin\Debug\netcoreapp3.1\Console-LAB1.dll
+E:\Mis Documentos\URL\Ciclo 2021\2do\ESTII\Lab\Practicas\EDII_2021_LAB1\Console-LAB1\bin\Debug\netcoreapp3.1\Console-LAB1.pdb
+E:\Mis Documentos\URL\Ciclo 2021\2do\ESTII\Lab\Practicas\EDII_2021_LAB1\Console-LAB1\bin\Debug\netcoreapp3.1\Library-LAB1.dll
+E:\Mis Documentos\URL\Ciclo 2021\2do\ESTII\Lab\Practicas\EDII_2021_LAB1\Console-LAB1\bin\Debug\netcoreapp3.1\Library-LAB1.pdb
+E:\Mis Documentos\URL\Ciclo 2021\2do\ESTII\Lab\Practicas\EDII_2021_LAB1\Console-LAB1\obj\Debug\netcoreapp3.1\Console-LAB1.csproj.AssemblyReference.cache
+E:\Mis Documentos\URL\Ciclo 2021\2do\ESTII\Lab\Practicas\EDII_2021_LAB1\Console-LAB1\obj\Debug\netcoreapp3.1\Console-LAB1.GeneratedMSBuildEditorConfig.editorconfig
+E:\Mis Documentos\URL\Ciclo 2021\2do\ESTII\Lab\Practicas\EDII_2021_LAB1\Console-LAB1\obj\Debug\netcoreapp3.1\Console-LAB1.AssemblyInfoInputs.cache
+E:\Mis Documentos\URL\Ciclo 2021\2do\ESTII\Lab\Practicas\EDII_2021_LAB1\Console-LAB1\obj\Debug\netcoreapp3.1\Console-LAB1.AssemblyInfo.cs
+E:\Mis Documentos\URL\Ciclo 2021\2do\ESTII\Lab\Practicas\EDII_2021_LAB1\Console-LAB1\obj\Debug\netcoreapp3.1\Console-LAB1.csproj.CoreCompileInputs.cache
+E:\Mis Documentos\URL\Ciclo 2021\2do\ESTII\Lab\Practicas\EDII_2021_LAB1\Console-LAB1\obj\Debug\netcoreapp3.1\Console-LAB1.csproj.CopyComplete
+E:\Mis Documentos\URL\Ciclo 2021\2do\ESTII\Lab\Practicas\EDII_2021_LAB1\Console-LAB1\obj\Debug\netcoreapp3.1\Console-LAB1.dll
+E:\Mis Documentos\URL\Ciclo 2021\2do\ESTII\Lab\Practicas\EDII_2021_LAB1\Console-LAB1\obj\Debug\netcoreapp3.1\Console-LAB1.pdb
+E:\Mis Documentos\URL\Ciclo 2021\2do\ESTII\Lab\Practicas\EDII_2021_LAB1\Console-LAB1\obj\Debug\netcoreapp3.1\Console-LAB1.genruntimeconfig.cache

@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "jIX7jfDE7XmTSU37yG4mU8nea6ojlbw6AiEFFdkl7aOvMaMIHSyDOQo0SNrHcx1GmfHFIJoNcrS6rLp2rHsi+A==",
+  "dgSpecHash": "U6VS4j6TJx8+zrA0LKLmD6SZDeX4qdFlDsxARWQKXXj6l7ORAJbchUgmLESvsIQWDAarXo5zUos7T3hgKtSGWg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\hichi\\Documents\\GitHub\\EDII_2021_LAB1\\API-LAB1\\API-LAB1.csproj",
+  "projectFilePath": "E:\\Mis Documentos\\URL\\Ciclo 2021\\2do\\ESTII\\Lab\\Practicas\\EDII_2021_LAB1\\API-LAB1\\API-LAB1.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\hichi\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+    "C:\\Users\\ericd\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
   ],
   "logs": []
 }
